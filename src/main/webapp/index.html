@@ -1,0 +1,20 @@
+
+<html ng-app="appPedido">
+<head>
+	<meta charset="UTF-8">
+    <link rel="stylesheet" href="lib/bootstrap/bootstrap.min.css" />
+	<script src="lib/angular/angular.js"/></script>   
+	<script src="appPedido.js"/></script>  
+</head>
+
+<body ng-controller="pedidocontroller">
+	<div ng-include="'index_default.html'" class="d-none d-md-block"></div>
+	<div ng-include="'index_mobile.html'" class="d-md-none"></div>
+	<div ng-include="'modal.html'"></div>
+	<script src="lib/bootstrap/jquery-3.2.1.slim.min.js"></script>
+	<script src="lib/bootstrap/tooltip.min.js"></script>
+	<script src="lib/bootstrap/popper.min.js"></script>
+	<script src="lib/bootstrap/bootstrap.min.js"></script>
+  
+</body>
+</html>

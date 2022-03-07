@@ -1,0 +1,44 @@
+
+	<div class="container">
+	  
+	  <!--MENU-->
+	  <div class="row">
+	    <div class="col align-self-start">
+	      <div ng-include="'Menu.html'"></div>
+	  	</div> 
+	  </div> 
+	  <!--TABELA DE PEDIDOS -->
+	  <div class="card border border-info rounded">
+  		<div class="card-header">
+    		<h4>#Pedidos</h4>
+    		<div class="alert alert-success col-sm-8" role="alert" ng-show="dadosPedido.showrespostadeacao">
+      			{{dadosPedido.mensagemrespostadeacao}}
+      			<button type="button" class="close" ng-click="fecharMsgRespostaAcao()" >
+				    <span  >&times;</span>
+				  </button>
+   			</div>
+ 		</div>
+ 		<div class="card-body">
+ 			<div ng-include="'tb_pedidos.html'" ></div>
+	    </div>
+	  </div>
+
+
+
+	  <!--BOTÃO DE INCLUSÃO -->
+	  <div class="row">
+	    <div class="col">
+			<button type="button" class="btn btn-primary" ng-disabled="dadosPedido.desahabilitarButtonnovopedido" ng-click="criarNovoPedido()" >Novo Pedido</button>
+	    </div>
+	  </div> 
+
+	  <!--FORM NOVO PEDIDO-->
+	  <div class="card border border-info rounded" ng-show="dadosPedido.showformnovopedido">
+  		<div class="card-header">
+    		<h4>#Novo Pedido</h4>
+ 		</div>
+ 		<div class="card-body">
+ 			<div ng-include="'form_pedido.html'"></div>
+ 		</div>
+ 	  </div>
+	</div>

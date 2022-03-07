@@ -1,0 +1,21 @@
+
+  <table class="table" ng-show="apresentarTabela(dadosPedido)" > 
+    
+    <tbody>
+      <tr ng-repeat="pedido in dadosPedido.pedidos">
+        <td>{{pedido.contato}} - 
+            {{pedido.entrega}} -
+            {{pedido.trocoString}} - 
+            {{pedido.totalString}} - 
+            <input type="image" src="imagem/eye-2x.png" title="Itens do Pedido" data-toggle="modal" data-target="#exampleModal" ng-click="carregarItensPedido(pedido.id)"/>
+            <span class="badge badge-success" ng-show="pedido.entregue">{{pedido.status}}</span>
+            <span class="badge badge-secondary" ng-show="pedido.pronto">{{pedido.status}}</span>
+            <span class="badge badge-info" ng-show="pedido.realizado">{{pedido.status}}</span>
+            <input type="image" src="imagem/circle-check-2x.png" title="Pedido Pronto" ng-show="pedido.realizado" ng-click="pedidopronto(pedido)"/>
+            <input type="image" src="imagem/thumb-up-2x.png" title="Pedido Entregue" ng-show="pedido.pronto" ng-click="pedidoentregue(pedido)"/>
+            <input type="image" src="imagem/circle-x-2x.png" title="Cancelar Pedido" ng-click="pedidocancelado(pedido)"/>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>

@@ -1,0 +1,48 @@
+
+
+<div class="container">
+	  
+	  
+  <div class="list-group">
+    <a href="#" class="list-group-item list-group-item-action active">
+    	<input type="image" src="imagem/list-rich-3x.png">
+      Café da Gabi
+    </a>
+  </div>
+
+  <div id="accordion">
+    <div class="card">
+      <div class="card-header" id="headingOne">
+        <h5 class="mb-0">
+          <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          <input type="image" src="imagem/cart-3x.png">
+          Pedidos
+          </button>
+        </h5>
+      </div>
+
+      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="card-body">
+          <div ng-include="'tb_pedidos_mobile.html'" class="d-sm-none"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header" id="headingTwo">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" ng-click="criarNovoPedido()">
+          <input type="image" src="imagem/pencil-3x.png">
+          Novo Pedido
+          </button>
+        </h5>
+      </div>
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+        <div class="card-body">
+          <div ng-include="'form_pedido_mobile.html'" class="d-sm-none"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

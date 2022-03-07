@@ -1,0 +1,43 @@
+
+<html ng-app="appRelatorio">
+<head>
+	<meta charset="UTF-8">
+    <link rel="stylesheet" href="lib/bootstrap/bootstrap.min.css" />
+	<script src="lib/angular/angular.js"/></script>   
+	<script src="appRelatorio.js"/></script>  
+</head>
+
+<body ng-controller="relatoriocontroller">
+
+	<div class="container">
+	  
+	  <!--MENU-->
+	  <div class="row">
+	    <div class="col align-self-start">
+	      <div ng-include="'Menu.html'"></div>
+	  	</div> 
+	  </div> 
+	   <!--TABELA DE VENDAS-->
+	  <div class="row">
+	    <div class="col border border-info rounded">
+	      <h3>#Vendas por Dia</h3>
+	      <div ng-include="'tb_vendas.html'"></div>
+	    </div> 
+	  </div> 
+
+	   <!--TABELA DE Itens VENDAS-->
+	  <div class="row">
+	    <div class="col border border-info rounded" style="padding-top: 6px; margin-top: 6px;">
+	      <h3>#Itens {{diaselecionado}}</h3>
+	      <div ng-include="'tb_itens_vendas.html'"></div>
+	    </div> 
+	  </div> 
+
+	</div>
+
+	<script src="lib/bootstrap/jquery-3.2.1.slim.min.js"></script>
+	<script src="lib/bootstrap/popper.min.js"></script>
+	<script src="lib/bootstrap/bootstrap.min.js"></script>
+  
+</body>
+</html>

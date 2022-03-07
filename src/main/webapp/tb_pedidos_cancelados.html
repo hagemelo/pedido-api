@@ -1,0 +1,36 @@
+
+<div class="alert alert-warning" role="alert" ng-show="!pedidoscarregados && !errobackendcarregarpedidos">
+  Não Há Pedidos! {{statusRetorno}}
+</div>
+
+<div class="alert alert-danger" role="alert"  ng-show="errobackendcarregarpedidos">
+Erro ao Carregar Pedidos!
+</div>
+
+<table class="table table-striped" ng-show="pedidoscarregados && !errobackendcarregarpedidos">
+  <thead class="thead-dark">
+    <tr>
+      <th>Contato</th>
+      <th>Entrega</th>
+      <th>Troco</th>
+      <th>Desconto</th>
+      <th>Total</th>
+      <th>Estatus</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="pedido in pedidos">
+      <td>{{pedido.contato}}</td>
+      <td>{{pedido.entrega}}</td>
+      <td>{{pedido.trocoString}}</td>
+      <td>{{pedido.descontoString}}</td>
+      <td>{{pedido.totalString}}</td>
+     
+      <td>
+         <input type="image" src="imagem/eye-2x.png" title="Itens do Pedido" data-toggle="modal" data-target="#exampleModal" ng-click="carregarItensPedido(pedido.id)"/>
+        <span class="badge badge-danger">{{pedido.status}}</span>
+   
+      </td>
+    </tr>
+  </tbody>
+</table>

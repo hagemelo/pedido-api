@@ -1,0 +1,53 @@
+ <form name="novopedidoform" class="my-form" >
+  
+
+  
+  <div class="form-group row">
+    <!--CONTATO-->
+    <label for="Contato" class="col-sm-2 col-form-label">Contato</label>
+    <input name="fielcontato" class="form-control form-control-sm" placeholder="Contato..." ng-model="dadosPedido.novoPedido.contato" required = "true"/>
+    <div class="alert alert-warning col-sm-3" role="alert" ng-show="novopedidoform.fielcontato.$invalid && novopedidoform.fielcontato.$dirty">
+      <input type="image" src="imagem/warning-2x.png">
+      Campo Contato Obrigatório!
+    </div>
+
+
+
+    <!--ENTREGA-->
+    <label for="Entrega" class="col-sm-2 col-form-label">Entrega</label>
+    <input name="fielEntrega" class="form-control form-control-sm" placeholder="Entrega..." ng-model="dadosPedido.novoPedido.entrega" required>
+    <div class="alert alert-warning col-sm-3" role="alert" ng-show="novopedidoform.fielEntrega.$invalid && novopedidoform.fielEntrega.$dirty">
+      <input type="image" src="imagem/warning-2x.png">
+      Campo Entrega Obrigatório!
+    </div>
+
+    <!--TROCO-->
+    <label for="Troco" class="col-sm-2 col-form-label">Troco Para</label>
+    <input type="text" class="form-control form-control-sm" id="Troco" placeholder="Troco..." ng-model="dadosPedido.novoPedido.troco" onkeypress="onlydecimal(event)"/>
+
+    <!--PRODUTOS-->
+    <label for="Produtos" class="col-sm-2 col-form-label">Produtos</label>
+    <select class="custom-select"  ng-model="produtoSelecionado" ng-options="produto.produto for produto in dadosPedido.produtos"></select>
+    <div class="input-group-append">
+      <input type="text" class="form-control form-control-sm" id="quantidade" ng-model="dadosPedido.quantidade" onkeypress="onlydecimal(event)"/>
+      <button type="button" class="btn btn-outline-secondary btn-sm" ng-click="additem(produtoSelecionado, dadosPedido.quantidade)" >Add</button>
+    </div>
+
+    <label for="Itens" class="col-sm-2 col-form-label">Itens</label>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item" ng-repeat="item in dadosPedido.novoPedido.itens">
+        <h6>{{item.quantidade}}, {{item.descricao}}, R$ {{item.total}} </h6>  
+        <input type="image" src="imagem/circle-x-2x.png" title="Excluir Item" ng-click="removeritem(item)"/>
+      </li>
+    </ul>
+
+    <h5><span class="badge badge-success">Total {{dadosPedido.totalPedido}}</span></h5>
+    <h5><span class="badge badge-secondary">Troco {{dadosPedido.trocoPedido}}</span></h5>
+    <button type="button" class="btn btn-outline-primary btn-sm" ng-click="addpedido(dadosPedido.novoPedido)" ng-show="novopedidoform.$valid" data-toggle="collapse" data-target="#collapseTwo" aria-controls="collapseTwo">OK</button>
+
+  </div>
+
+
+    
+         
+</form>

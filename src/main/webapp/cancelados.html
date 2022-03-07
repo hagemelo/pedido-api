@@ -1,0 +1,34 @@
+
+<html ng-app="appCancelados">
+<head>
+	<meta charset="UTF-8">
+    <link rel="stylesheet" href="lib/bootstrap/bootstrap.min.css" />
+	<script src="lib/angular/angular.js"/></script>   
+	<script src="appCancelados.js"/></script>  
+</head>
+
+<body ng-controller="canceladoscontroller">
+
+	<div class="container">
+	  
+	  <!--MENU-->
+	  <div class="row">
+	    <div class="col align-self-start">
+	      <div ng-include="'Menu.html'"></div>
+	  	</div> 
+	  </div> 
+	   <!--TABELA DE PEDIDOS-->
+	  <div class="row">
+	    <div class="col border border-info rounded">
+	      <h3>#Pedidos Cancelados</h3>
+	      <div ng-include="'tb_pedidos_cancelados.html'"></div>
+	    </div> 
+	  </div> 
+	</div>
+	<div ng-include="'modal.html'"></div>
+	<script src="lib/bootstrap/jquery-3.2.1.slim.min.js"></script>
+	<script src="lib/bootstrap/popper.min.js"></script>
+	<script src="lib/bootstrap/bootstrap.min.js"></script>
+  
+</body>
+</html>

@@ -1,0 +1,26 @@
+
+<div class="alert alert-warning" role="alert" ng-show="!itensvendascarregados && !errobackendcarregaritensvendas">
+  Não Há Vendas! 
+</div>
+
+<div class="alert alert-danger" role="alert"  ng-show="errobackendcarregaritensvendas">
+Erro ao Carregar Vendas!
+</div>
+<table class="table" ng-show="itensvendascarregados && !errobackendcarregaritensvendas">
+  <thead class="thead-dark">
+    <tr>
+      <th>Item</th>
+      <th>Quantidade</th>
+      <th>%</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="itemvenda in itensvendas">
+      <td>{{itemvenda.item}}</td>
+      <td>{{itemvenda.quantidade}}</td>
+      <td>{{itemvenda.percentualToString}}</td>
+      <td>{{itemvenda.totalToString}}</td>
+    </tr>
+  </tbody>
+</table>
